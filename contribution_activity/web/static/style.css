@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.calendar {
+    margin-top: 30px;
+}
+
+.container {
+    position: relative;
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.calendar_header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+.calendar_months_third {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+.month_header {
+    text-align: center;
+    font-size: 22px;
+    height: 45px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+   width: 45px;
+   height: 45px;
+   text-align: center;
+   border: 1px dotted black;
+}
+
+td:nth-last-child(1) {
+    background-color: #F8CBAD;
+    color: red;
+}
+
+td:nth-last-child(2) {
+    background-color: #F8CBAD;
+    color: red;
+}
+
+td.days_name {
+    background-color: #D9D9D9;
+}
+

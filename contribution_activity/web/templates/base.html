@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <title>{{ header }}</title>
+</head>
+<body>
+    <section class="calendar">
+        <div class="container">
+            <div class="calendar_header"><h1>{{ header }}</h1></div>
+            <div class="calendar_months">
+                
+                <div class="calendar_months_third">
+                {% for month in year|slice:":4" %}
+                
+                    <div class="month">
+                        <div class="month_header">{{ month.name }}</div>
+                        <div class="days">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="days_name">ПН</td>
+                                        <td class="days_name">ВТ</td>
+                                        <td class="days_name">СР</td>
+                                        <td class="days_name">ЧТ</td>
+                                        <td class="days_name">ПТ</td>
+                                        <td class="days_name">СБ</td>
+                                        <td class="days_name">ВС</td>
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:":7" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"7:14" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"14:21" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"21:28" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"28:35" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"35:" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                </div>
+                
+                <div class="calendar_months_third">
+                {% for month in year|slice:"4:8" %}
+        
+                    <div class="month">
+                        <div class="month_header">{{ month.name }}</div>
+                        <div class="days">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="days_name">ПН</td>
+                                        <td class="days_name">ВТ</td>
+                                        <td class="days_name">СР</td>
+                                        <td class="days_name">ЧТ</td>
+                                        <td class="days_name">ПТ</td>
+                                        <td class="days_name">СБ</td>
+                                        <td class="days_name">ВС</td>
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:":7" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"7:14" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"14:21" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"21:28" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"28:35" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"35:" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                </div>
+
+                <div class="calendar_months_third">
+                {% for month in year|slice:"8:" %}
+                
+                    <div class="month">
+                        <div class="month_header">{{ month.name }}</div>
+                        <div class="days">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="days_name">ПН</td>
+                                        <td class="days_name">ВТ</td>
+                                        <td class="days_name">СР</td>
+                                        <td class="days_name">ЧТ</td>
+                                        <td class="days_name">ПТ</td>
+                                        <td class="days_name">СБ</td>
+                                        <td class="days_name">ВС</td>
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:":7" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"7:14" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"14:21" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"21:28" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"28:35" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        {% for day in month.dates|slice:"35:" %}
+                                        {% if day %}
+                                        <td data-value="{{ day.year }}-{{ day.month }}-{{ day.day }}">{{ day.day }}</td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

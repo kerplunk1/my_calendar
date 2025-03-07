@@ -1,0 +1,16 @@
+services:
+  my_calendar:
+    image: python:3.12.2-bullseye
+    container_name: my_calendar
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:8000"
+    command: bash -c "
+      pip install -r requirements.txt ;
+      python /app/contribution_activity/manage.py makemigrations api ;
+      python /app/contribution_activity/manage.py migrate ;
+      python /app/contribution_activity/manage.py runserver 0.0.0.0:8000 --insecure"
+
