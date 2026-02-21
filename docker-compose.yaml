@@ -1,6 +1,6 @@
 services:
   my_calendar:
-    image: python:3.12.2-bullseye
+    image: python:3.13.7-slim-trixie
     container_name: my_calendar
     restart: always
     working_dir: /app
